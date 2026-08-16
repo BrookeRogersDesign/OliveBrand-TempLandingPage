@@ -130,6 +130,14 @@
                  clamp(4rem, 2.5rem + 6vw, 9rem);
 }
 
+/* The shared .section-label margin is tuned for the main site, where the
+   label introduces a much larger display statement. Here it sits above body
+   copy at a closer size, so it needs more air to read as a label rather than
+   as the paragraph's first line. */
+.temp-contact .section-label {
+  margin-bottom: clamp(2rem, 1.1rem + 3vw, 4.5rem);
+}
+
 /* Figma sets this paragraph across the full content width rather than at
    the narrow measure the main site's .statement uses. */
 .temp-contact__intro {
