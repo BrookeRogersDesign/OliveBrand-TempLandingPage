@@ -1,0 +1,198 @@
+/* ==========================================================================
+   PAGE — TEMPORARY LANDING
+   Figma frame "Olive Branch | Temp Landing" (node 20:587).
+
+   Three blocks: the gradient hero, a contact section on white, and the
+   simplified footer. No stacking scroll here — the full site's pinned-panel
+   choreography would be noise on a three-block holding page.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. HEADER
+   ========================================================================== */
+
+/* The site header is fixed on the real site. Here the page is short and
+   there is no scroll story to tell, so it sits in flow over the hero. */
+.temp-header {
+  position: absolute;
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* The pill is an anchor, not a menu toggle, so it keeps the button's
+   fixed width from the Figma rather than the menu pill's behaviour. */
+.temp-header__cta { text-decoration: none; }
+
+
+/* ==========================================================================
+   2. HERO
+   Figma: gradient ground 0–1104 of a 3031-tall frame, eyebrow at y=731,
+   headline at y=788. Bottom-aligned, like the main site's hero.
+   ========================================================================== */
+
+.temp-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  padding-block: calc(var(--header-h) + var(--space-xl))
+                 clamp(3rem, 7vh, 6rem);
+  overflow: hidden;
+  background-color: var(--ob-ink);
+  color: var(--ob-sage);
+}
+
+.temp-hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: var(--ob-gradient-deep);
+}
+
+/* Same slow-wandering warm mass as the main site's hero, so the two feel
+   like one brand. Purely decorative — held still for reduced motion. */
+.temp-hero__gradient::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(52% 44% at 28% 34%,
+      rgba(120, 109, 78, 0.55) 0%,
+      rgba(120, 109, 78, 0.22) 42%,
+      rgba(120, 109, 78, 0) 72%),
+    radial-gradient(46% 40% at 74% 68%,
+      rgba(224, 225, 217, 0.14) 0%,
+      rgba(224, 225, 217, 0.05) 45%,
+      rgba(224, 225, 217, 0) 75%);
+  will-change: transform, opacity;
+  animation: temp-glow-drift 34s var(--ease-in-out) infinite;
+}
+
+@keyframes temp-glow-drift {
+  0%   { transform: translate3d(-3%, 2%, 0) scale(1.04); opacity: 0.85; }
+  33%  { transform: translate3d(4%, -3%, 0) scale(1.14); opacity: 1; }
+  66%  { transform: translate3d(2%, 4%, 0) scale(1.08); opacity: 0.92; }
+  100% { transform: translate3d(-3%, 2%, 0) scale(1.04); opacity: 0.85; }
+}
+
+/* A whisper of grain stops the large flat gradient from banding */
+.temp-hero__gradient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.temp-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Figma: Work Sans Medium 22px. Tracked out and uppercased here — at this
+   size it reads as a label rather than a sentence. */
+.temp-hero__eyebrow {
+  margin-bottom: clamp(1rem, 2.2vw, 2rem);
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 0.68rem + 0.34vw, 0.9375rem);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--ob-sage);
+}
+
+/* Figma: FreightDisp Pro Medium, 100px at 1920, line-height 1.04.
+   Falls back to Georgia until Freight Display Pro is added to the Adobe
+   kit — see the note at the top of css/fonts.css. */
+.temp-hero__title {
+  max-width: 15ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 1.2rem + 6.4vw, 6.25rem);
+  font-weight: var(--weight-medium);
+  line-height: 1.04;
+  letter-spacing: -0.005em;
+  color: var(--ob-sage);
+  text-wrap: balance;
+}
+
+
+/* ==========================================================================
+   3. CONTACT
+   ========================================================================== */
+
+.temp-contact {
+  background-color: var(--ob-white);
+  padding-block: clamp(3.5rem, 2.5rem + 5vw, 8.5rem)
+                 clamp(4rem, 2.5rem + 6vw, 9rem);
+}
+
+/* Figma sets this paragraph across the full content width rather than at
+   the narrow measure the main site's .statement uses. */
+.temp-contact__intro {
+  max-width: 62ch;
+  font-family: var(--font-body);
+  font-size: clamp(1.125rem, 0.8rem + 1.35vw, 2.125rem);
+  font-weight: var(--weight-regular);
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  text-wrap: pretty;
+}
+
+.temp-contact__form {
+  margin-top: clamp(2.5rem, 1.8rem + 3.4vw, 5.5rem);
+  display: grid;
+  gap: clamp(0.75rem, 0.55rem + 0.7vw, 1.125rem);
+}
+
+.temp-contact .form__row--2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(0.75rem, 0.55rem + 0.7vw, 1.125rem);
+}
+
+@media (min-width: 600px) {
+  .temp-contact .form__row--2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* Submit hard right on desktop (Figma x=1373 of a 1549 content width),
+   full width on mobile where a right-aligned button reads as an afterthought. */
+.temp-contact__actions {
+  margin-top: clamp(1.5rem, 2.6vw, 2.75rem);
+  display: flex;
+}
+
+@media (max-width: 599px) {
+  .temp-contact__actions .btn { width: 100%; justify-content: flex-start; }
+}
+
+@media (min-width: 600px) {
+  .temp-contact__actions { justify-content: flex-end; }
+}
+
+.temp-contact .form__status:empty { display: none; }
+
+.temp-contact .form__status {
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+}
+
+.temp-contact .form__status[data-state="error"]   { color: var(--color-error); }
+.temp-contact .form__status[data-state="success"] { color: var(--color-success); }
+
+
+/* ==========================================================================
+   4. FOOTER
+   The full site's footer minus the back-to-top control and the two link
+   columns — there are no pages to link to yet.
+   ========================================================================== */
+
+.temp-footer {
+  padding-block: clamp(3rem, 2rem + 4vw, 6rem) clamp(1.5rem, 2.4vw, 2.5rem);
+}
+
+.temp-footer .site-footer__brand { margin-bottom: clamp(2rem, 4vw, 4rem); }

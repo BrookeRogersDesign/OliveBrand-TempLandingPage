@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Olive Branch — Coming Soon</title>
+  <meta name="description" content="Olive Branch is a modern accounting and tax advisory firm built around clarity, strategy, and a more personal approach to your financial life. Our new site is on its way — get in touch in the meantime.">
+
+  <!-- Holding page: keep it out of search results so the real site indexes
+       cleanly when it launches. Remove this line if the client wants the
+       coming-soon page findable. -->
+  <meta name="robots" content="noindex">
+
+  <!-- Open Graph / social preview. Absolute URLs — scrapers do not resolve
+       relative paths. Update the domain if this moves. -->
+  <meta property="og:title" content="Olive Branch — Coming Soon">
+  <meta property="og:description" content="Something thoughtful is taking root. A modern accounting and tax advisory firm.">
+  <meta property="og:image" content="https://olivebranchaccounting.com/assets/images/og/og-default.jpg">
+  <meta property="og:url" content="https://olivebranchaccounting.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Olive Branch">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/logos/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
+
+  <!-- Preload the one webfont so text paints without waiting for the
+       CSS import chain to discover it -->
+  <link rel="preload" href="assets/fonts/work-sans-var.woff2" as="font"
+        type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="temp-page">
+
+  <!-- ==========================================================
+       HEADER
+       No navigation overlay here — there is nowhere to navigate to.
+       The pill is a single anchor down to the form, as in the Figma.
+       ========================================================== -->
+  <header class="site-header temp-header">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="./" aria-label="Olive Branch — home">
+        <span class="site-logo__stack">
+          <img class="site-logo__img"
+               src="assets/logos/PNG/Parchment-%20Off%20White/OliveBranch-Branding(F)-07.png"
+               alt="Olive Branch">
+        </span>
+      </a>
+
+      <a class="btn btn--primary temp-header__cta" href="#contact">
+        <span class="btn__icon" data-icon="plus" aria-hidden="true"></span>
+        <span class="btn__label">Contact</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ======================================================
+         1. HERO
+         The brand gradient, the same one the full site opens on.
+         ====================================================== -->
+    <section class="temp-hero">
+      <div class="temp-hero__gradient" aria-hidden="true"></div>
+
+      <div class="container temp-hero__inner">
+        <p class="temp-hero__eyebrow">Coming Soon</p>
+        <h1 class="temp-hero__title">Something Thoughtful Is Taking Root.</h1>
+      </div>
+    </section>
+
+
+    <!-- ======================================================
+         2. CONTACT
+         ====================================================== -->
+    <section class="temp-contact" id="contact">
+      <div class="container">
+        <p class="section-label">Contact Us</p>
+
+        <p class="temp-contact__intro">
+          Olive Branch is a modern accounting and tax advisory firm built
+          around clarity, strategy, and a more personal approach to your
+          financial life. From ongoing bookkeeping and tax preparation to
+          proactive planning and audit readiness, we're here to make the
+          complicated feel clear — and help you move forward with confidence.
+        </p>
+
+        <!-- Formspree endpoint goes in the action below. Until it is set,
+             js/form.js blocks submission and says so plainly rather than
+             showing a success message for a message that went nowhere. -->
+        <form class="form temp-contact__form" id="contact-form"
+              action="" method="POST" novalidate>
+
+          <div class="form__row form__row--2">
+            <div class="field">
+              <label class="visually-hidden" for="firstName">First name</label>
+              <input class="field__input field__input--pill" id="firstName"
+                     name="firstName" type="text" placeholder="First Name"
+                     autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label class="visually-hidden" for="lastName">Last name</label>
+              <input class="field__input field__input--pill" id="lastName"
+                     name="lastName" type="text" placeholder="Last Name"
+                     autocomplete="family-name" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="visually-hidden" for="email">Email</label>
+            <input class="field__input field__input--pill" id="email"
+                   name="email" type="email" placeholder="Email"
+                   autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label class="visually-hidden" for="help">How can we help?</label>
+            <select class="field__select field__select--pill" id="help"
+                    name="help" required>
+              <option value="" disabled selected>How Can We Help?</option>
+              <option>Tax Preparation</option>
+              <option>Tax Strategy &amp; Planning</option>
+              <option>Bookkeeping</option>
+              <option>Business Consulting</option>
+              <option>Audit Readiness</option>
+              <option>Year-Round Financial Guidance</option>
+              <option>New Business / Business Setup</option>
+              <option>Current Client Question</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+
+          <div class="temp-contact__actions">
+            <button class="btn btn--primary" type="submit">
+              <span class="btn__icon" data-icon="plus" aria-hidden="true"></span>
+              <span class="btn__label">Submit</span>
+            </button>
+          </div>
+
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================
+       FOOTER
+       Simplified against the full site: no back-to-top and no link
+       columns, because there are no pages to link to yet.
+       ========================================================== -->
+  <footer class="site-footer temp-footer">
+    <div class="container">
+      <div class="site-footer__brand">
+        <img class="site-footer__logo"
+             src="assets/logos/PNG/Parchment-%20Off%20White/OliveBranch-Branding(F)-04.png"
+             alt="Olive Branch — Accounting &amp; Finance">
+      </div>
+
+      <div class="site-footer__panel">
+        <p class="site-footer__disclaimer">
+          Olive Branch Accounting provides tax preparation, tax planning,
+          bookkeeping, consulting, and related accounting services to
+          individuals and businesses. Information provided on this website is
+          for general informational purposes only and should not be considered
+          individualized tax, legal, or financial advice. Services and
+          recommendations may vary based on each client's individual
+          circumstances. Please consult with a qualified professional regarding
+          your specific situation.
+          <span class="site-footer__copy">&copy; 2026 Olive Branch Accounting. All rights reserved.</span>
+        </p>
+
+        <div class="site-footer__rule" role="presentation"></div>
+
+        <div class="site-footer__fine">
+          <ul class="site-footer__legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Legal Disclosure</a></li>
+            <li><a href="#">Accessibility Statement</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/icons.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

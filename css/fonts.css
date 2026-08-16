@@ -1,0 +1,34 @@
+/* ==========================================================================
+   OLIVE BRANCH — WEB FONTS
+
+   From the Figma file:
+     Display / headlines ... FreightDisp Pro, Medium
+     Body, nav, UI ......... Work Sans, Light 300 / Regular 400 / Medium 500
+
+   ── WORK SANS — self-hosted ──────────────────────────────────────────────
+   One variable font file covers every weight the site uses (and every one
+   it might use later). Subset to Latin + Latin Extended plus the handful of
+   symbols the copy actually contains — arrows, em dash, curly quotes,
+   copyright — which takes it from 360KB to ~89KB.
+
+   Self-hosted rather than loaded from Google: one less third-party the site
+   depends on, no connection to a Google server on every visit, and it keeps
+   working offline. Licensed under the SIL OFL — see Work-Sans-OFL.txt in
+   /assets/fonts, which must ship alongside the font file.
+
+   ── FREIGHTDISP PRO — pending ────────────────────────────────────────────
+   Licensed via Adobe Fonts (kit lnv3cht). The kit currently publishes the
+   Freight SANS families only; Freight DISPLAY Pro still needs adding to it.
+   Until then --font-display falls back to Georgia. Once it's published, add
+   the kit stylesheet to each page head and put `freight-display-pro` at the
+   front of the --font-display stack in tokens.css. Nothing else changes.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/work-sans-var.woff2") format("woff2");
+  /* Variable weight axis — one file answers every weight in this range */
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

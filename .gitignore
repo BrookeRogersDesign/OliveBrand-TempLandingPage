@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs / temp
+*.log
+Thumbs.db
+node_modules/
+
+# ---------------------------------------------------------------------------
+# Print / source artwork — not needed by the website and heavy in a git repo.
+# Delete these three lines if you'd rather keep one versioned source of truth.
+# ---------------------------------------------------------------------------
+assets/logos/EPS/
+assets/logos/*.pdf
+assets/**/*.ai
+
+# Brand reference folder — uncomment if it shouldn't be public
+# brand/
