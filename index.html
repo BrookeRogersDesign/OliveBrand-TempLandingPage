@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Olive Branch — Coming Soon</title>
-  <meta name="description" content="Thoughtful tax and accounting guidance designed to bring clarity to your finances and confidence to your next move. Our new site is on its way — get in touch in the meantime.">
+  <title>Olive Branch Accounting | Tax, Bookkeeping &amp; Advisory</title>
+  <meta name="description" content="Tax preparation, tax planning, bookkeeping and advisory services for individuals and small business owners. Accounting expertise, made personal — get in touch with Olive Branch Accounting.">
 
 
   <!-- Open Graph / social preview. Absolute URLs — scrapers do not resolve
@@ -17,6 +17,12 @@
   <meta property="og:site_name" content="Olive Branch">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Canonical: tells search engines which URL is the real one, so the
+       apex and www versions are not treated as duplicate pages. -->
+  <link rel="canonical" href="https://olivebranchacc.com/">
+  <meta property="og:locale" content="en_US">
+  <meta name="theme-color" content="#2E2A1F">
+
   <link rel="icon" href="assets/logos/favicon-32.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
 
@@ -26,6 +32,33 @@
         type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- Structured data: how Google understands what this business IS, rather
+       than guessing from the words on the page. Pairs with the Google
+       Business Profile — the name here must match it EXACTLY.
+       TODO: add address, telephone, areaServed and openingHours once
+       confirmed. Do not guess them. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    "name": "Olive Branch Accounting",
+    "url": "https://olivebranchacc.com/",
+    "logo": "https://olivebranchacc.com/assets/logos/apple-touch-icon.png",
+    "image": "https://olivebranchacc.com/assets/images/og/og-default.jpg",
+    "description": "Tax preparation, tax planning, bookkeeping and advisory services for individuals and small business owners.",
+    "slogan": "Accounting expertise, made personal.",
+    "knowsAbout": [
+      "Tax Preparation",
+      "Tax Strategy and Planning",
+      "Bookkeeping",
+      "Business Consulting",
+      "Audit Readiness",
+      "Year-Round Financial Guidance",
+      "New Business Setup"
+    ]
+  }
+  </script>
 </head>
 
 <body class="temp-page">
