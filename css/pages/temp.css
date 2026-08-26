@@ -109,7 +109,9 @@
    Falls back to Georgia until Freight Display Pro is added to the Adobe
    kit — see the note at the top of css/fonts.css. */
 .temp-hero__title {
-  max-width: 15ch;
+  /* 18ch breaks the line at the comma — "Accounting expertise, / made
+     personal." At 15ch it fell to three lines and lost the pairing. */
+  max-width: 18ch;
   font-family: var(--font-display);
   font-size: clamp(2.75rem, 1.2rem + 6.4vw, 6.25rem);
   font-weight: var(--weight-medium);
@@ -204,3 +206,21 @@
 }
 
 .temp-footer .site-footer__brand { margin-bottom: clamp(2rem, 4vw, 4rem); }
+
+/* The supporting copy under the statement. Set at body size so the opening
+   line still leads — three paragraphs at the statement's display size would
+   swamp the page and push the form below the fold. */
+.temp-contact__body {
+  margin-top: clamp(1.5rem, 1rem + 1.6vw, 2.5rem);
+  max-width: 68ch;
+}
+
+.temp-contact__body > p + p { margin-top: var(--space-md); }
+
+.temp-contact__body p {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted);
+  text-wrap: pretty;
+}
