@@ -129,11 +129,22 @@
           </p>
         </div>
 
-        <!-- Formspree endpoint goes in the action below. Until it is set,
-             js/form.js blocks submission and says so plainly rather than
-             showing a success message for a message that went nowhere. -->
+        <!-- Posts to Formspree. js/form.js intercepts the submit and sends it
+             over fetch, so the visitor stays on this page and sees the result
+             inline instead of being bounced to a Formspree confirmation
+             screen. The action is still a real endpoint, so the form degrades
+             to a normal POST if JavaScript fails. -->
         <form class="form temp-contact__form" id="contact-form"
-              action="" method="POST" novalidate>
+              action="https://formspree.io/f/xppzabkk" method="POST" novalidate>
+
+          <!-- Formspree reads these. _subject titles the notification email;
+               _gotcha is a honeypot — bots fill hidden fields, humans cannot
+               see it, and Formspree silently discards anything that arrives
+               with it filled. Free spam filtering. -->
+          <input type="hidden" name="_subject"
+                 value="New enquiry from olivebranchacc.com">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+                 aria-hidden="true" class="visually-hidden">
 
           <div class="form__row form__row--2">
             <div class="field">
