@@ -93,15 +93,15 @@
   width: 100%;
 }
 
-/* Figma: Work Sans Medium 22px. Tracked out and uppercased here — at this
-   size it reads as a label rather than a sentence. */
+/* Figma: Work Sans Medium 22px. Tracked out and set small so it reads as a
+   label rather than a sentence. Case follows the copy — the brand sets
+   nothing in all caps. */
 .temp-hero__eyebrow {
   margin-bottom: clamp(1rem, 2.2vw, 2rem);
   font-family: var(--font-body);
   font-size: clamp(0.75rem, 0.68rem + 0.34vw, 0.9375rem);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-widest);
-  text-transform: uppercase;
   color: var(--ob-sage);
 }
 
