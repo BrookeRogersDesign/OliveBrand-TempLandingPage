@@ -36,8 +36,10 @@
   <!-- Structured data: how Google understands what this business IS, rather
        than guessing from the words on the page. Pairs with the Google
        Business Profile — the name here must match it EXACTLY.
-       TODO: add address, telephone, areaServed and openingHours once
-       confirmed. Do not guess them. -->
+       Based in Tampa, serving the whole US — areaServed is what stops
+       Google treating this as a Tampa-only business. addressLocality with
+       no street is correct for a service-area business.
+       TODO: add telephone once confirmed. Do not guess it. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,6 +50,16 @@
     "image": "https://olivebranchacc.com/assets/images/og/og-default.jpg",
     "description": "Tax preparation, tax planning, bookkeeping and advisory services for individuals and small business owners.",
     "slogan": "Accounting expertise, made personal.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tampa",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
     "knowsAbout": [
       "Tax Preparation",
       "Tax Planning and Strategy",
